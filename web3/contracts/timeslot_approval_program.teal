@@ -1,0 +1,117 @@
+#pragma version 4
+txn ApplicationID
+int 0
+==
+bnz main_l8
+txn OnCompletion
+int NoOp
+==
+bnz main_l7
+txn OnCompletion
+int OptIn
+==
+bnz main_l6
+int 1
+bnz main_l5
+err
+main_l5:
+int 0
+return
+main_l6:
+int 1
+return
+main_l7:
+txna ApplicationArgs 0
+txna ApplicationArgs 1
+txna ApplicationArgs 2
+txna ApplicationArgs 3
+txna ApplicationArgs 4
+txna ApplicationArgs 5
+txna ApplicationArgs 6
+txna ApplicationArgs 7
+txna ApplicationArgs 8
+txna ApplicationArgs 9
+txna ApplicationArgs 10
+txna ApplicationArgs 11
+txna ApplicationArgs 12
+txna ApplicationArgs 13
+callsub createupdatetimeslot_0
+return
+main_l8:
+int 1
+return
+
+// create_update_timeslot
+createupdatetimeslot_0:
+store 13
+store 12
+store 11
+store 10
+store 9
+store 8
+store 7
+store 6
+store 5
+store 4
+store 3
+store 2
+store 1
+store 0
+int 0
+byte "ts1"
+load 0
+app_local_put
+int 0
+byte "ts2"
+load 1
+app_local_put
+int 0
+byte "ts3"
+load 2
+app_local_put
+int 0
+byte "ts4"
+load 3
+app_local_put
+int 0
+byte "ts5"
+load 4
+app_local_put
+int 0
+byte "ts6"
+load 5
+app_local_put
+int 0
+byte "ts7"
+load 6
+app_local_put
+int 0
+byte "ts8"
+load 7
+app_local_put
+int 0
+byte "ts9"
+load 8
+app_local_put
+int 0
+byte "ts10"
+load 9
+app_local_put
+int 0
+byte "ts11"
+load 10
+app_local_put
+int 0
+byte "ts12"
+load 11
+app_local_put
+int 0
+byte "ts13"
+load 12
+app_local_put
+int 0
+byte "ts14"
+load 13
+app_local_put
+int 1
+retsub
